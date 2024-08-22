@@ -1,4 +1,4 @@
-# Use an appropriate Python base image
+# set base image (host OS)
 FROM python:3.8-bullseye
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
