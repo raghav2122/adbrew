@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 export const TodoForm = () => {
-    const [todo, setTodo] = useState(''); // Initialize as an empty string
-
+    const [todo, setTodo] = useState(''); 
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch('http://localhost:8000/todos/', {
@@ -10,7 +9,7 @@ export const TodoForm = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ title: todo, completed: false }), // Send title and completed status
+            body: JSON.stringify({ title: todo, completed: false }), 
         })
         .then(response => response.json())
         .then(data => {

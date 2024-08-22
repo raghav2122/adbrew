@@ -18,21 +18,22 @@ hardcoded_todos = [
 
 class TodoListView(APIView):
 
+        # Fetch all todo items from database
     def get(self, request):
         # If the collection is empty we insert hardcoded todos
         if db.todos.count_documents({}) == 0:
             db.todos.insert_many(hardcoded_todos)
         
-        # Fetch all todo items from database
         todos = list(db.todos.find())
         for todo in todos:
-            todo['_id'] = str(todo['_id'])  # Convert ObjectId to string for JSON serialization
+            todo['_id'] = str(todo['_id'])  
         return Response(todos, status=status.HTTP_200_OK)
 
-    def post(self, request):
         # Insert a new todo item into the database
-        todo_item = request.data  # Get the todo item from the request body
-        result = db.todos.insert_one(todo_item)  # Insert the item into the 'todos' collection
+
+    def post(self, request):
+        todo_item = request.data 
+        result = db.todos.insert_one(todo_item)  
         return Response({"inserted_id": str(result.inserted_id)}, status=status.HTTP_201_CREATED)
 
     
