@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+
+# If using SQLite database
+*.db
+
+# Django migrations
+**/migrations/
+**/migrations/*.py
+**/migrations/*.pyc
+
+# Media files
+media/
+
+# Static files
+staticfiles/
+static/
+
+# Local environment variables
+.env
+.env.*
+
+# Virtual environment
+venv/
+.env/
+.Python
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS specific
+.DS_Store
+
+# Node.js (if using Node for frontend)
+node_modules/
+
+# VSCode settings
+.vscode/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# pytest
+.cache/
+pytest_cache/
+.pytest_cache/
+test/
+
+# MySQL database dumps
+*.sql
+
+# Other OS files
+*.swp
+*.swo
+
+# Docker specific files
+docker-compose*.yml
+docker-compose.override.yml
